@@ -1,0 +1,321 @@
+//hjktyljамx
+
+$redcolor: #ff0060;
+$darkcolor: #222227;
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+  font-size: 25px;
+  text-decoration-line: underline;
+}
+
+ //header---------------------------
+.header {
+    background: $darkcolor;
+   
+   .logoa {
+     min-width:130px;
+     display: block;
+    .logo{
+        width: 70%;
+        height: 70%;
+        margin-top: 10px;
+        margin-left: 10px;
+ 
+
+    }
+  }
+    .nav {
+        margin: 0 auto;
+       
+        &-item {
+       
+      
+        transition: background-position-x 0.9s linear;
+        text-align: center;
+        height: 50px;
+        
+       
+         &:last-child {
+            margin-right: 0px;
+         }
+         a{
+            
+            font-size: 19px;
+            color: #777;
+            text-decoration: none;
+            transition: all 0.45s;
+            min-width: 100px;
+            display: block;
+         }
+
+         &:hover {
+            background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEi%0D%0AIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhs%0D%0AaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB3aWR0%0D%0AaD0iMzkwcHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDM5MCA1MCIgZW5hYmxlLWJhY2tn%0D%0Acm91bmQ9Im5ldyAwIDAgMzkwIDUwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZmlsbD0i%0D%0Abm9uZSIgc3Ryb2tlPSIjZDk0ZjVjIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGlt%0D%0AaXQ9IjEwIiBkPSJNMCw0Ny41ODVjMCwwLDk3LjUsMCwxMzAsMAoJYzEzLjc1LDAsMjguNzQtMzgu%0D%0ANzc4LDQ2LjE2OC0xOS40MTZDMTkyLjY2OSw0Ni41LDI0My42MDMsNDcuNTg1LDI2MCw0Ny41ODVj%0D%0AMzEuODIxLDAsMTMwLDAsMTMwLDAiLz4KPC9zdmc+Cg==");
+            animation: line 1s;
+          }
+
+          &:hover a {
+            color: #d94f5c;
+          }
+        
+          &:not(:last-child) {
+            margin-right: 20px;
+          }
+       
+      
+        }
+        @keyframes line {
+            0% {
+              background-position-x: 390px;
+            }
+          }
+    }
+
+    .reg {
+       
+            &-item {
+                background: #fff;
+                margin-right: 20px;
+                border-radius: 5px;
+                border: 2px solid $redcolor;
+                
+               
+                &:last-child {
+                    margin-right: 0px;
+                   
+                }
+               a{
+                    
+                  color:#222222;
+                  min-width: 100px;
+                  display: block;;
+                  text-align: center;
+                  &:hover {
+                    background: $darkcolor;
+                    color: #fff;
+                    text-decoration: none;
+
+                  }
+
+                  
+                }
+               
+              
+            }
+        
+    }
+
+}
+//end header------------------------------
+
+//---slider 2-----------------------------
+#slider2 {
+  padding-top: 20px;
+  background: rgb(230, 230, 230);
+
+  .slider2-item {
+    cursor: pointer; 
+
+    &:hover {
+      border: 2px solid $redcolor;
+    }
+
+      
+  }
+  
+}
+//--content----------------------
+
+
+
+#filmLoad {
+  margin-top: 30px;
+  display:flex;
+  // .film-poster {
+   
+    
+  // }
+  .film-overall {
+    width: 100%;
+    margin-top: 80px;
+    min-width: 270px;
+    .film-info {
+
+      &-type-item {
+        font-weight:bold;
+      }
+    }
+    
+    .film-descr {
+  margin-top: 10px;
+  margin-left: 15px;
+  
+    }
+  }
+
+}
+
+
+.news {
+  
+  h1 {
+    margin-top: 50px;
+    font-size: 28px;
+  }
+}
+// footer-----------------------------------------
+
+.footer {
+  background-color: $darkcolor;
+  min-height: 100px;
+
+  &-logo-container {
+    height: 100px;
+  }
+
+  &-logo {
+    color: $redcolor;
+    width: 150px;
+    margin-left: 20px;
+  }
+
+  .social-container {
+    margin-left: 20px;
+    .join {
+      color:$redcolor;
+    }
+    .social-item {
+      width: 48px;
+      height: 48px;
+      display: inline-block;
+
+      
+      &:nth-child(3) {
+        background-image: url("../img/icons8-instagram-64.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      &:nth-child(2){
+        background-image: url("../img/icons8-vkontakte-48.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      &:last-child{
+        background-image: url("../img/icons8-youtube-48.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+//--book--page-------------------------------------------
+.book-choice {
+  margin-top: 15px;
+
+.book-choice-cinema-container {
+  display: flex;
+  justify-content: space-between;
+  .cinema-info {
+    width:180px;
+    height:130px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    &:first-child {
+      background-image: url('../img/cinema/bovlevard.jpg');
+
+      
+    
+    }
+    &:nth-last-child(2) {
+      background-image: url('../img/cinema/exterior.jpg');
+    }
+    &:last-child {
+      background-image: url('../img/cinema/odeon.jpg');
+    }
+
+    &:hover {
+      filter: grayscale(100%) sepia(100%);
+    }
+    
+  }
+  .cinema-active {
+    border: 1px solid $redcolor;
+  }
+}
+}
+
+#book-time-hall {
+  margin-top: 10px;
+  h1 {
+    width: 100%;
+  }
+  
+  .book-time {
+    &-item {
+      display:inline-block;
+      width: auto;
+      height: auto;
+      border:2px solid #777;
+      border-radius: 7px;
+      vertical-align: middle;
+      padding: 5px;
+      margin-top: 10px;
+      color: #777;
+      text-align: center;
+      font-size: 15px;
+      font-weight:bold;
+
+      &:hover {
+        text-decoration: none;
+        font-weight:bold;
+        border-color: $redcolor;
+        color:$redcolor;
+
+      }
+    }
+  }
+  
+  #book-hall {
+    min-height: 400px;
+  }
+}
+
+
+
+.main {
+        
+  width: 700px;
+  min-height: 200px;
+  background-color: rgb(50, 136, 158);
+  position: absolute;
+}
+.space, .item {
+  
+  background-color: blueviolet;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  display: inline-block;
+  z-index: 5;
+ 
+}
+.space2, .item2 {
+  
+  background-color: rgb(21, 175, 34);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  display: inline-block;
+  z-index: 5;
+  left:35px;
+ 
+}
+
+@import "media.scss";

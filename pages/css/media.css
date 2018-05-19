@@ -1,0 +1,52 @@
+@media (max-width: 575.98px) {
+  #reg {
+    margin: 0 auto;
+  }
+  .slider2-item {
+    margin: 0 auto;
+  }
+  .book-choice-cinema-container .cinema-info {
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #reg {
+    margin: 0 auto;
+  }
+  .film-poster img {
+    margin-left: 30%;
+  }
+  .film-poster h1 {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .header .nav a {
+    font-size: 15px;
+  }
+  .book-choice-cinema-container .cinema-info {
+    width: 120px;
+    height: 85px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .book-choice-cinema-container .cinema-info {
+    width: 135px;
+    height: 95px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header .nav a {
+    font-size: 24px;
+  }
+  .header .nav-item:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+/*# sourceMappingURL=media.css.map */

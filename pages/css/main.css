@@ -1,0 +1,343 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 25px;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.header {
+  background: #222227;
+}
+
+.header .logoa {
+  min-width: 130px;
+  display: block;
+}
+
+.header .logoa .logo {
+  width: 70%;
+  height: 70%;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.header .nav {
+  margin: 0 auto;
+}
+
+.header .nav-item {
+  -webkit-transition: background-position-x 0.9s linear;
+  transition: background-position-x 0.9s linear;
+  text-align: center;
+  height: 50px;
+}
+
+.header .nav-item:last-child {
+  margin-right: 0px;
+}
+
+.header .nav-item a {
+  font-size: 19px;
+  color: #777;
+  text-decoration: none;
+  -webkit-transition: all 0.45s;
+  transition: all 0.45s;
+  min-width: 100px;
+  display: block;
+}
+
+.header .nav-item:hover {
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEi%0D%0AIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhs%0D%0AaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB3aWR0%0D%0AaD0iMzkwcHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDM5MCA1MCIgZW5hYmxlLWJhY2tn%0D%0Acm91bmQ9Im5ldyAwIDAgMzkwIDUwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZmlsbD0i%0D%0Abm9uZSIgc3Ryb2tlPSIjZDk0ZjVjIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGlt%0D%0AaXQ9IjEwIiBkPSJNMCw0Ny41ODVjMCwwLDk3LjUsMCwxMzAsMAoJYzEzLjc1LDAsMjguNzQtMzgu%0D%0ANzc4LDQ2LjE2OC0xOS40MTZDMTkyLjY2OSw0Ni41LDI0My42MDMsNDcuNTg1LDI2MCw0Ny41ODVj%0D%0AMzEuODIxLDAsMTMwLDAsMTMwLDAiLz4KPC9zdmc+Cg==");
+  -webkit-animation: line 1s;
+          animation: line 1s;
+}
+
+.header .nav-item:hover a {
+  color: #d94f5c;
+}
+
+.header .nav-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+@-webkit-keyframes line {
+  0% {
+    background-position-x: 390px;
+  }
+}
+
+@keyframes line {
+  0% {
+    background-position-x: 390px;
+  }
+}
+
+.header .reg-item {
+  background: #fff;
+  margin-right: 20px;
+  border-radius: 5px;
+  border: 2px solid #ff0060;
+}
+
+.header .reg-item:last-child {
+  margin-right: 0px;
+}
+
+.header .reg-item a {
+  color: #222222;
+  min-width: 100px;
+  display: block;
+  text-align: center;
+}
+
+.header .reg-item a:hover {
+  background: #222227;
+  color: #fff;
+  text-decoration: none;
+}
+
+#slider2 {
+  padding-top: 20px;
+  background: #e6e6e6;
+}
+
+#slider2 .slider2-item {
+  cursor: pointer;
+}
+
+#slider2 .slider2-item:hover {
+  border: 2px solid #ff0060;
+}
+
+#filmLoad {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#filmLoad .film-overall {
+  width: 100%;
+  margin-top: 80px;
+  min-width: 270px;
+}
+
+#filmLoad .film-overall .film-info-type-item {
+  font-weight: bold;
+}
+
+#filmLoad .film-overall .film-descr {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.news h1 {
+  margin-top: 50px;
+  font-size: 28px;
+}
+
+.footer {
+  background-color: #222227;
+  min-height: 100px;
+}
+
+.footer-logo-container {
+  height: 100px;
+}
+
+.footer-logo {
+  color: #ff0060;
+  width: 150px;
+  margin-left: 20px;
+}
+
+.footer .social-container {
+  margin-left: 20px;
+}
+
+.footer .social-container .join {
+  color: #ff0060;
+}
+
+.footer .social-container .social-item {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+}
+
+.footer .social-container .social-item:nth-child(3) {
+  background-image: url("../img/icons8-instagram-64.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer .social-container .social-item:nth-child(2) {
+  background-image: url("../img/icons8-vkontakte-48.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer .social-container .social-item:last-child {
+  background-image: url("../img/icons8-youtube-48.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.book-choice {
+  margin-top: 15px;
+}
+
+.book-choice .book-choice-cinema-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.book-choice .book-choice-cinema-container .cinema-info {
+  width: 180px;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.book-choice .book-choice-cinema-container .cinema-info:first-child {
+  background-image: url("../img/cinema/bovlevard.jpg");
+}
+
+.book-choice .book-choice-cinema-container .cinema-info:nth-last-child(2) {
+  background-image: url("../img/cinema/exterior.jpg");
+}
+
+.book-choice .book-choice-cinema-container .cinema-info:last-child {
+  background-image: url("../img/cinema/odeon.jpg");
+}
+
+.book-choice .book-choice-cinema-container .cinema-info:hover {
+  -webkit-filter: grayscale(100%) sepia(100%);
+          filter: grayscale(100%) sepia(100%);
+}
+
+.book-choice .book-choice-cinema-container .cinema-active {
+  border: 1px solid #ff0060;
+}
+
+#book-time-hall {
+  margin-top: 10px;
+}
+
+#book-time-hall h1 {
+  width: 100%;
+}
+
+#book-time-hall .book-time-item {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  border: 2px solid #777;
+  border-radius: 7px;
+  vertical-align: middle;
+  padding: 5px;
+  margin-top: 10px;
+  color: #777;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#book-time-hall .book-time-item:hover {
+  text-decoration: none;
+  font-weight: bold;
+  border-color: #ff0060;
+  color: #ff0060;
+}
+
+#book-time-hall #book-hall {
+  min-height: 400px;
+}
+
+.main {
+  width: 700px;
+  min-height: 200px;
+  background-color: #32889e;
+  position: absolute;
+}
+
+.space, .item {
+  background-color: blueviolet;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  display: inline-block;
+  z-index: 5;
+}
+
+.space2, .item2 {
+  background-color: #15af22;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  display: inline-block;
+  z-index: 5;
+  left: 35px;
+}
+
+@media (max-width: 575.98px) {
+  #reg {
+    margin: 0 auto;
+  }
+  .slider2-item {
+    margin: 0 auto;
+  }
+  .book-choice-cinema-container .cinema-info {
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #reg {
+    margin: 0 auto;
+  }
+  .film-poster img {
+    margin-left: 30%;
+  }
+  .film-poster h1 {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .header .nav a {
+    font-size: 15px;
+  }
+  .book-choice-cinema-container .cinema-info {
+    width: 120px;
+    height: 85px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .book-choice-cinema-container .cinema-info {
+    width: 135px;
+    height: 95px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header .nav a {
+    font-size: 24px;
+  }
+  .header .nav-item:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

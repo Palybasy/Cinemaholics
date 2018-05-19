@@ -1,0 +1,89 @@
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+
+    #reg {
+        margin: 0 auto;
+      }
+    .slider2-item {
+        margin: 0 auto;
+    }
+
+    .book-choice-cinema-container {
+       
+        .cinema-info {
+          margin-bottom: 20px;
+          margin-left: auto;
+          margin-right: auto;
+
+        }
+    }
+  
+    
+    
+  }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    #reg {
+        margin: 0 auto;
+      }
+    .film-poster {
+        img{
+            margin-left:30%;
+        }
+        h1{
+            text-align: center;
+        }
+    }
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+   
+ .header {
+     .nav {
+        a {
+         font-size: 15px;
+
+        
+        }
+        
+    }
+ }
+
+ .book-choice-cinema-container {
+       
+    .cinema-info {
+        width:120px;
+        height:85px;
+
+    }
+}
+ 
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .book-choice-cinema-container {
+       
+        .cinema-info {
+            width:135px;
+            height:95px;
+
+        }
+    }
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+    .header {
+        .nav {
+           a {
+            font-size: 24px;
+           }
+           &-item:not(:last-child) {
+            margin-right: 50px;
+          }
+       }
+    }
+ }
