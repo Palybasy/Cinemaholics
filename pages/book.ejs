@@ -25,7 +25,7 @@
                     <ul class="nav d-flex flex-column flex-md-row" >
                         <li class="nav-item"><a href="#">Кинотеатры</a></li>
                         <li class="nav-item"><a href="#">Скоро в кино</a></li>
-                        <li class="nav-item"><a href="#">Забронировать!</a></li>
+                        <li class="nav-item"><a href="/book">Забронировать!</a></li>
                     </ul>
                 
                 </div>
@@ -45,18 +45,18 @@
     <div class="container-fluid">
         <div class="book-choice">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-xl-4">
                     <div class="book-choice-date">
-                        <h1 >Выберите дату:</h1>
+                        <h1 class="text-center">Выберите дату:</h1>
                         <div class="book-choice-date-calendar">
-                            <p>Дата: <input type="text" id="datepicker"></p>
+                            <div id="datepicker"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xl-8">
                     <div class="book-choice-cinema">
                         <h1 class="text-center">Выберите кинотеатр:</h1>
-                        <div class="book-choice-cinema-container flex-sm-row flex-column">
+                        <div class="book-choice-cinema-container justify-content-lg-around flex-sm-row flex-column">
                             <div class="cinema-info"></div>
                             <div class="cinema-info"></div>
                             <div class="cinema-info"></div>
@@ -67,9 +67,23 @@
         </div>
         <div id="book-time-hall">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md">
                     <div class="book-time d-flex flex-wrap justify-content-between">
-                        <h1 class="text-center">Выберите сеанс:</h1>
+                        <h1 class="text-center">Малый зал</h1>
+                        <a href="/hall" class="book-time-item">17:00 Мстители:война бесконечности</a>
+                        <a href="#" class="book-time-item">17:00 Мстители:война бесконечности</a>
+                        <a href="#" class="book-time-item">17:00 Мстители</a>
+                        <a href="#" class="book-time-item">17:00 Мстители:война бесконечности</a>
+                        <a href="#" class="book-time-item">17:00 Мстители</a>
+                        <a href="#" class="book-time-item">17:00Мстители:война бесконечности</a>
+                        <a href="#" class="book-time-item">17:00Мстители:война бесконечности</a>
+                    </div>
+                   
+                 
+                </div>
+                <div class="col-md">
+                    <div class="book-time d-flex flex-wrap justify-content-between">
+                        <h1 class="text-center">Vip зал</h1>
                         <a href="#" class="book-time-item">17:00 Мстители:война бесконечности</a>
                         <a href="#" class="book-time-item">17:00 Мстители:война бесконечности</a>
                         <a href="#" class="book-time-item">17:00 Мстители</a>
@@ -79,22 +93,19 @@
                         <a href="#" class="book-time-item">17:00Мстители:война бесконечности</a>
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <div id="book-hall">
-                            <div class="div">
-       
-                                    <div class="space"></div>
-                                    <div class="space2"></div>
-                            
-                                    
-                                    <div class="main">
-                            
-                               
-                                    </div>
-                            
-                            </div>
+                <div class="col-md">
+                    <div class="book-time d-flex flex-wrap justify-content-between">
+                        <h1 class="text-center">Большой зал</h1>
+                        <a href="#" class="book-time-item">17:00 Мстители:война бесконечности</a>
+                        <a href="#" class="book-time-item">17:00 Мстители:война бесконечности</a>
+                        <a href="#" class="book-time-item">17:00 Мстители</a>
+                        <a href="#" class="book-time-item">17:00 Мстители:война бесконечности</a>
+                        <a href="#" class="book-time-item">17:00 Мстители</a>
+                        <a href="#" class="book-time-item">17:00Мстители:война бесконечности</a>
+                        <a href="#" class="book-time-item">17:00Мстители:война бесконечности</a>
                     </div>
                 </div>
+               
             </div>
         </div>
     </div>

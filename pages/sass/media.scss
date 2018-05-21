@@ -36,6 +36,17 @@
         }
     }
 
+    .book-choice-cinema {
+        .book-choice-cinema-container {
+        // flex-direction: column;
+     .cinema-info {
+         width:170px;
+         height:110px;
+    
+     }
+    }
+ }
+
 }
 
 // Medium devices (tablets, 768px and up)
@@ -52,11 +63,12 @@
     }
  }
 
- .book-choice-cinema-container {
-       
+ .book-choice-cinema {
+       flex-direction: column;
     .cinema-info {
         width:120px;
         height:85px;
+       
 
     }
 }
@@ -85,5 +97,14 @@
             margin-right: 50px;
           }
        }
+    }
+
+    .book-choice-cinema-container {
+       
+        .cinema-info {
+            width:300px;
+            height:200px;
+    
+        }
     }
  }

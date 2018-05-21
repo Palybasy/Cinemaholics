@@ -28,6 +28,12 @@ app.get('/book', function (req, res) {
     
 });
 
+app.get('/hall', function (req, res) {
+    res.render('hall');
+    
+    
+});
+
 app.post('/', function (req, res) {
   
     var filmName = req.body.filmName;
