@@ -297,6 +297,7 @@ h1 {
 
 //-hall page-----------------------------------
 
+
 #book-hall {
   min-height: 700px;
   background: #000;
@@ -308,7 +309,6 @@ h1 {
     height: 600px;
     background: #fff;
 
-    
     .hall-main  {
       position: absolute;
       top:20px;
@@ -317,6 +317,16 @@ h1 {
       height:460px;
       background-image: url('../img/hall/big.png');
       z-index: 1;
+
+      .vip-color {
+        background-color:$redcolor;
+        border: none;
+      }
+      .custom-color {
+        background-color: rgb(165, 161, 161);
+        border: none;
+      }
+      
 
     }
 

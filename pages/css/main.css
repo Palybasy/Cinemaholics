@@ -294,6 +294,16 @@ h1 {
   z-index: 1;
 }
 
+#book-hall .hall-big .hall-main .vip-color {
+  background-color: #ff0060;
+  border: none;
+}
+
+#book-hall .hall-big .hall-main .custom-color {
+  background-color: #a5a1a1;
+  border: none;
+}
+
 #book-hall .hall-big .space, #book-hall .hall-big .item {
   position: absolute;
   left: 30px;
