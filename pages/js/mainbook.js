@@ -4,9 +4,135 @@ $('#datepicker').datepicker({
     maxDate:"+10D"
 });
 
-// $('.footer').click(function(){
-//  console.log($('#datepicker').datepicker("getDate") );
-//   });
+
+var dataHalls;
+
+var checkAsync = true;
+
+$(".cinema-info").click(function(){
+    if (!checkAsync) {
+        return;
+    }
+    checkAsync = false;
+    var date =$('#datepicker').datepicker("getDate");
+    var options = {
+   
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    timezone: 'UTC'
+  
+  };
+
+   
+
+    var dateNormal = date.toLocaleString("ru", options);
+
+    
+    
+    var cinemaName = this.attributes[1].value;
+
+    var data = JSON.stringify({
+        date: dateNormal,
+        cinema: cinemaName
+    });
+    var insertSelector = document.querySelector("#row-insert");
+    insertSelector.innerHTML = '<div class="col-md-12"><h2 id="getDate" class="text-center"></h2></div>';
+
+    $("#getDate").html(dateNormal +" ("+ cinemaName +")");
+    if (date != null) {
+        $.ajax({
+            type: "POST",
+            url: "/book",
+            contentType: 'application/json',
+            data: data,
+            success: function(data){
+               dataHalls = data.halls;
+                data.halls.forEach(function(item, i, arr) {
+
+                    
+                    
+                    var colMd = document.createElement('div');
+                    insertSelector.appendChild(colMd);
+                    colMd.className = "col-md";
+                    colMd.id = item.name;
+                    colMd.innerHTML = '<div class="book-time d-flex flex-wrap justify-content-between"></div>';
+                    idDiv = "#" + item.name;
+
+                    var selector = idDiv + " " + ".book-time" ;
+                   
+                        $( selector).html('<h1 class="text-center">'+ item.name + '</h1>');
+                        var cinema = item.name;
+               
+                   
+                    item.seanse.forEach(function(item, i, arr){
+                        // console.log(item);
+                         var a = '<a href="/hall" class="book-time-item" ' + 'data-time=' + item.time + ' '+'data-name=' + cinema +'>' + item.time +' '+item.nameFilm +'</a>';
+                        $(selector).html($( selector ).html()+ a) ;
+               
+                    });
+                   
+                });
+
+                checkAsync = true;
+
+                
+                
+            }
+            
+        });
+    } else {
+        alert('дата не выбрана');
+    }
+});
+
+ $('#row-insert').click(function(e) {
+                    e.preventDefault();
+                    var a = e.target;
+                    console.log(a.attributes["data-time"]);
+                    if (a.attributes["data-time"] == undefined){
+                       return;
+                    }
+                    var time = a.attributes["data-time"].value;
+                    var name =a.attributes["data-name"].value;
+                    var hallNum;
+                    var timeNum;
+
+                    dataHalls.forEach(function(item, i, arr) {
+                        if (item.name == name) {
+                            hallNum = i;
+                        }
+                    });
+                    dataHalls[hallNum].seanse.forEach(function(item, i, arr) {
+                        if (item.time == time) {
+                            timeNum = i;
+                        }
+                    });
 
 
+                    var dataa = JSON.stringify({
+                        hall: name,
+                        time: time,
+                        hallNum: hallNum,
+                        timeNum: timeNum
+                    });
+                    $.ajax({
+            
+                        type: "POST",
+                        url: "/hall",
+                        contentType: 'application/json',
+                        data: dataa,
+                        success: function(data){ 
+                            console.log(a.attributes.href.value);
+                            window.location = a.attributes.href.value;
+
+                        }
+
+                    });
+                    
+
+                           
+                   
+
+                });
 

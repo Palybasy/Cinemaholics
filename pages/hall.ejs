@@ -42,16 +42,59 @@
     </div>
     <!---hall -------------------------------------------------------------->
     <div class="container-fluid">
-        <div id="book-hall">
-            <div class="hall-big">
-                <div class="hall-main">
-
+        <div id="book-hall" data-coords=<%= coords %> data-date=<%= date %> data-cinema=<%= cinema %> data-hall= <%= hall %>>
+            <div id="hall-info">
+                <h3 class="seanse-info text-center">12.6.2009 
+                    Большой (малый зал)
+                </h3>
+                <div class="place-info d-flex justify-content-around">
+                    <div class="place-info-item">
+                        <div class="place-row">
+                            <div class="place place-drag"></div>
+                            <p> - перетащите место на нужный участок в зале</p>
+                        </div>
+                        <div class="place-row">
+                            <div class="place place-book1"></div>
+                            <div class="place place-book2"></div>
+                            <p> - место уже забронировано</p>
+                        </div>
+                    </div>
+                    <div class="place-info-item">
+                        <div class="place-row">
+                            <div class="place place-vip"></div>
+                            <p> - vip-место</p>
+                        </div>
+                        <div class="place-row">
+                            <div class="place place-custom"></div>
+                            <p> - обычное место</p>
+                        </div> 
+                    </div>
                 </div>
-                <div class="space">
+            </div>
+            <!-- ------------------------------- -->
+            <div class="hall-<%= hall %>">
+                <div class="hall-main-<%= hall %>" id='hall'>
+                    
+                </div>
+                <div class="space-<%= hall %>">
 
                 </div>
             </div>
+        
+            <!-- ----------------------------------- -->
         </div>
+        <div id="book-send" >
+            <div id="place-value">
+                <div class="place-value-container">
+                   <span> Всего: </span> <span class="value-all"></span>
+                    <span> vip: </span> <span class="value-vip"></span>
+                    <span> обычных: </span> <span class="value-custom"></span>
+                </div>
+            </div>
+            <div class="btn-container d-flex justify-content-center"> 
+                <input class="btn btn-primary" id="book-button" type="button" value="забронировать!">
+            </div> 
+         </div>
      </div>
 
 
