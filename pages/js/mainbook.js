@@ -48,6 +48,11 @@ $(".cinema-info").click(function(){
             data: data,
             success: function(data){
                dataHalls = data.halls;
+
+               var dateNow = new Date;
+               var timeNow = dateNow.getHours() * 60 + dateNow.getMinutes() + 10;
+
+
                 data.halls.forEach(function(item, i, arr) {
 
                     
@@ -56,7 +61,7 @@ $(".cinema-info").click(function(){
                     insertSelector.appendChild(colMd);
                     colMd.className = "col-md";
                     colMd.id = item.name;
-                    colMd.innerHTML = '<div class="book-time d-flex flex-wrap justify-content-between"></div>';
+                    colMd.innerHTML = '<div class="book-time d-flex book-time d-flex flex-column"></div>';
                     idDiv = "#" + item.name;
 
                     var selector = idDiv + " " + ".book-time" ;
@@ -66,10 +71,22 @@ $(".cinema-info").click(function(){
                
                    
                     item.seanse.forEach(function(item, i, arr){
-                        // console.log(item);
+                        
+                        // console.log(+item.time.slice(0,2));
+                        // console.log(+(item.time.slice(3)));
+                        var timeItem = +(item.time.slice(0,2)) * 60 + (+(item.time.slice(3)));
+                       console.log(dateNow.toLocaleString("ru", options));
+                       console.log(timeItem, timeNow);
+                        if ( dateNow.toLocaleString("ru", options) != dateNormal) {
                          var a = '<a href="/hall" class="book-time-item" ' + 'data-time=' + item.time + ' '+'data-name=' + cinema +'>' + item.time +' '+item.nameFilm +'</a>';
                         $(selector).html($( selector ).html()+ a) ;
-               
+                        } else if (timeItem > timeNow) {
+                            var a = '<a href="/hall" class="book-time-item" ' + 'data-time=' + item.time + ' '+'data-name=' + cinema +'>' + item.time +' '+item.nameFilm +'</a>';
+                            $(selector).html($( selector ).html()+ a) ;
+                        } else {
+                            var a = '<a href="/hall" class="book-time-item disabled" ' + 'data-time=' + item.time + ' '+'data-name=' + cinema +'>' + item.time +' '+item.nameFilm +'</a>';
+                            $(selector).html($( selector ).html()+ a) ;
+                        }
                     });
                    
                 });
@@ -84,6 +101,8 @@ $(".cinema-info").click(function(){
     } else {
         alert('дата не выбрана');
     }
+
+    $(".book-choice").slideUp();
 });
 
  $('#row-insert').click(function(e) {

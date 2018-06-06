@@ -263,6 +263,12 @@ h1 {
     border: 3px solid $redcolor;
     margin-bottom: 5px;
     border-radius: 5px;
+
+    .disabled {
+      pointer-events: none; /* делаем элемент неактивным для взаимодействия */
+      opacity: 0.5;
+      color: #888;/* цвет текста серый */
+    }
     &-item {
       display:inline-block;
       width: auto;
@@ -276,7 +282,7 @@ h1 {
       text-align: center;
       font-size: 15px;
       font-weight:bold;
-      margin: 0 5px;
+      margin: 3px 5px;
 
       &:hover {
         text-decoration: none;
@@ -289,6 +295,14 @@ h1 {
   }
   
  
+}
+
+#chack {
+  background-color: #f7fbf5;
+
+  img {
+    margin: 0 auto;
+  }
 }
 //--end book page-----------------
 
@@ -457,6 +471,8 @@ background-color: #ff0060;
 .custom-color2{
 background-color: #777;
 }
+
+
 //-------------------------------------------
 
 //--hall-info--------------------------------

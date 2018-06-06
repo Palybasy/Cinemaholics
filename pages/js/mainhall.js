@@ -372,13 +372,18 @@ $('.book-item').droppable ({
         } else{
         ui.draggable.remove();
         }
+        insertValuePlace(itemClass);
     }
 })
 
 
 $('#book-button').click(function(){
-    // var mass = [];
-    console.log(itemClass);
+    
+    
+    if($(itemClass).length==0) {
+        alert("места не выбраны");
+        return;
+    }
     $(itemClass).each(function(indx, element){
       var newItem = {} ;
       newItem.top = element.style.top;
@@ -397,7 +402,7 @@ $('#book-button').click(function(){
         contentType: 'application/json',
         data: JSON.stringify(coords),
         success: function(data){ 
-         console.log(data);
+        //  console.log(data);
          alert("Места успешно забронированны");
          window.location = '/book';
 
