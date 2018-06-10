@@ -189,6 +189,59 @@ h1 {
   background-repeat: no-repeat;
 }
 
+#fon {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: #222222;
+  opacity: 0.95;
+  z-index: 300;
+}
+
+#auth {
+  color: #fff;
+}
+
+#registration {
+  position: fixed;
+  z-index: 400;
+  width: 100%;
+  top: 100px;
+  left: 0;
+}
+
+#registration .form-container {
+  width: 320px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 15px;
+  border: 2px solid #222222;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 40px rgba(245, 242, 242, 0.5);
+          box-shadow: 0 0 40px rgba(245, 242, 242, 0.5);
+}
+
+#signIn {
+  position: fixed;
+  z-index: 400;
+  width: 100%;
+  top: 100px;
+  left: 0;
+}
+
+#signIn .form-container {
+  width: 320px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 15px;
+  border: 2px solid #222222;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 40px rgba(245, 242, 242, 0.5);
+          box-shadow: 0 0 40px rgba(245, 242, 242, 0.5);
+}
+
 .book-choice {
   margin-top: 15px;
 }

@@ -82,4 +82,130 @@ $(".slider2-item").click(function() {
      
 });
 
+$('#signO').click(function(e) {
+    e.preventDefault();
+    $("#fon").slideDown();
+    $("#registration").slideDown();
+ 
+
+});
+
+$('#signI').click(function(e) {
+    e.preventDefault();
+    $("#fon").slideDown();
+    $("#signIn").slideDown();
+  
+
+});
+
+$('#registration form').click(function(e){
+ 
+    if(e.target == e.currentTarget){
+        $("#fon").slideUp();
+        $("#signIn").slideUp();
+        $("#registration").slideUp();
+    }
+ });
+
+ $('#signIn form').click(function(e){
+        if(e.target == e.currentTarget){
+            $("#fon").slideUp();
+            $("#signIn").slideUp();
+            $("#registration").slideUp();
+        }
+ 
+     
+ });
+ $('#fon').click(function(){
+ 
+    $("#fon").slideUp();
+    $("#signIn").slideUp();
+    $("#registration").slideUp();
+});
+
+
+
+$("#registration form").submit(function(e){
+    e.preventDefault();
+    var warning = $('#registration .warning');
+    var name = $("#registration #inputName1").val();
+    var password = $("#registration #inputPassword1").val();
+    var repassword = $("#registration #inputPassword2").val();
+
+    if(password != repassword) {
+        warning.html("пароли не совпадают");
+        return;
+    }
+    var dataa = JSON.stringify({
+        name : name,
+        password: password
+    });
+    
+    $.ajax({
+        type: "POST",
+        url: "/signOut",
+        contentType: 'application/json',
+        data: dataa,
+        success: function(data){
+          if (data.str != 'ok') {
+              warning.html(data.str);
+          } else {
+            $("#fon").slideUp();
+            console.log($("#reg").css("display"));
+            
+            $("#registration").slideUp();
+            
+            $("#reg").css({"display": "none"});
+
+            $("#auth").css("display", "block");
+            $("#auth").html('Вы вошли, как ' + data.user);
+          }
+          
+          
+        }
+      });
+
+    
+});
+
+$("#signIn form").submit(function(e){
+    e.preventDefault();
+    var warning = $('#signIn .warning');
+    var name = $("#signIn #inputName2").val();
+    var password = $("#signIn #inputPassword3").val();
+   
+    warning.html('');
+    var dataa = JSON.stringify({
+        name : name,
+        password: password
+    });
+ 
+    console.log(dataa);
+    $.ajax({
+        type: "POST",
+        url: "/signIn",
+        contentType: 'application/json',
+        data: dataa,
+        success: function(data){
+            if (data.str != 'ok') {
+                warning.html(data);
+            } else {
+                $("#fon").slideUp();
+                console.log($("#reg").css("display"));
+                
+                $("#signIn").slideUp();
+                
+                $("#reg").css({"display": "none"});
+    
+                $("#auth").css("display", "block");
+                $("#auth").html('Вы вошли, как ' + data.user);
+            }
+         
+          
+        }
+      });
+
+    
+});
+
 

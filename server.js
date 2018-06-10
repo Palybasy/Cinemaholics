@@ -1,4 +1,5 @@
 var express = require('express');
+var expressSession = require('express-session');
 var ejs = require('ejs');
 var bodyParser = require("body-parser");
 
@@ -13,18 +14,148 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use(expressSession({
+    // если true, сохраняет сеанс в хранилище заново, даже если запрос не изменялся
+    resave : false,
+    // если установленно значение true, приложение сохраняет новые данные, даже если они не менялись
+    saveUninitialized : false,
+    // ключ используемый для подписания cookie файла (идентификатора сеанса)
+    secret: 'secretValue'
+}));
+
+
 app.set('views', path.join(__dirname, 'pages'));
 app.set('view engine', 'ejs');
 
 app.use(express.static("pages"));
 
 app.get('/', function (req, res) {
-    res.render('index');
+    if (req.session.username) {
+        res.render('index', {
+            sigIn: 'none',
+            sigOut: 'none',
+            fon: 'none',
+            reg: 'none !important;',
+            userShow: "block",
+            user: req.session.username
     
+        });
+    } else {
+        res.render('index', {
+            sigIn: 'none',
+            sigOut: 'none',
+            fon: 'none',
+            reg: 'flex !important;',
+            userShow: "none",
+            user: req.session.username
+    
+        });
+    }
+   
+       
     
 });
 app.get('/book', function (req, res) {
-    res.render('book');
+    if(req.session.username) {
+        res.render('book');
+    } else {
+        res.render('index', {
+            sigIn: 'block',
+            sigOut: 'none',
+            fon: 'block',
+            reg: 'flex !important;',
+            userShow: "none",
+            user: req.session.username
+    
+        });
+    }
+});
+// signOut-In------------------------------------
+app.post('/signOut', function (req, res) {
+    console.log(req.body);
+
+    MongoClient.connect(url, function(err, client) {
+        assert.equal(null, err);
+        console.log("Connected successfully to server");
+        
+        var db = client.db('Cinemaholics');
+        var collection = db.collection('users');
+
+        collection.find({name:req.body.name}).toArray(function(err, docs) {
+            assert.equal(err, null);
+            if(docs.length == 0) {
+
+                collection.insertOne({
+                    name:req.body.name,
+                    password: req.body.password
+                }, function(err, result) {
+                    assert.equal(err, null);
+                    
+                    console.log("Inserted new user");
+                    }
+            );
+            req.session.username = req.body.name;
+           
+            res.send({
+                str:'ok',
+                user: req.body.name
+             });
+            client.close();
+
+            } else {
+                res.send({str:"Пользователь с таким именем уже существует"});
+                client.close();
+            }
+    
+            });
+
+
+          
+
+    });
+    
+});
+
+
+app.post('/signIn', function (req, res) {
+    console.log(req.body);
+    MongoClient.connect(url, function(err, client) {
+        assert.equal(null, err);
+        console.log("Connected successfully to server");
+        
+        var db = client.db('Cinemaholics');
+        var collection = db.collection('users');
+        collection.find({name:req.body.name}).toArray(function(err, docs) {
+        assert.equal(err, null);
+        console.log(docs);
+        if (docs.length != 0) {
+            if(docs[0].password == req.body.password){
+                req.session.username = req.body.name;
+                res.send({
+                    str:'ok',
+                    user: req.body.name
+                 });
+                client.close();
+            } else {
+                res.send("Логин или пароль неверны");
+                client.close();
+
+            }
+        
+        } else {
+            res.send("Логин или пароль неверны");
+            client.close();
+        }
+
+
+        });
+        
+    });
+
+
+
+
+    
 });
 
 // -----global variables-------------------------------------
