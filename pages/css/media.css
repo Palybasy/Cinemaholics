@@ -10,6 +10,25 @@
     margin-left: auto;
     margin-right: auto;
   }
+  #chack {
+    min-height: auto;
+  }
+  #chack img {
+    width: 320px;
+    height: 200px;
+  }
+  #filmLoad {
+    border: none;
+  }
+  .news {
+    border: none;
+  }
+  .book-choice .book-choice-date {
+    border: none;
+  }
+  .book-choice .cinema-wrapper {
+    border: none;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {

@@ -70,6 +70,13 @@ app.get('/book', function (req, res) {
         });
     }
 });
+
+
+app.get('/logOut', function (req, res) {
+    req.session.username = undefined;
+    res.redirect('/');
+  
+});
 // signOut-In------------------------------------
 app.post('/signOut', function (req, res) {
     console.log(req.body);
@@ -291,7 +298,7 @@ app.post('/', function (req, res) {
         collection.find({name:filmName}).toArray(function(err, docs) {
             assert.equal(err, null);
             console.log("Found the following records");
-            console.log(docs[0]);
+            console.log(docs[0].name);
             res.send(docs[0]);
             });
           client.close();
@@ -303,13 +310,13 @@ app.post('/', function (req, res) {
 app.post('/hall-send', function (req, res) {
   
 var coordsBook = req.body;
-console.log(coordsBook);
+//console.log(coordsBook);
 dateGlobal.cinema[cinemaGlobalNum].halls[hallNumGlobal].seanse[timeNumGlobal].coordsBook = coordsBook;
 
 
 
 var newDateCinema = dateGlobal.cinema ;
-console.log(newDateCinema);
+//console.log(newDateCinema);
 
 
 MongoClient.connect(url, function(err, client) {
@@ -336,6 +343,6 @@ res.send(newDateCinema);
 
 app.listen(8080, function () {
     console.log('app running on port ' + 8080);
-    // console.log(object.template('k'));
+    
    
 });

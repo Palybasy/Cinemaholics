@@ -3,6 +3,11 @@
 $redcolor: #ff0060;
 $darkcolor: #222227;
 
+body {
+  background-image: url('../img/funky-lines.png');
+  background-attachment: fixed;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -119,6 +124,7 @@ h1 {
 
   .slider2-item {
     cursor: pointer; 
+    margin: 0 auto;
 
     &:hover {
       border: 2px solid $redcolor;
@@ -130,11 +136,17 @@ h1 {
 }
 //--content-----------------------
 
-
+.content {
+  margin-top:10px;
+}
 
 #filmLoad {
-  margin-top: 30px;
+ // margin-top: 30px;
+ padding-top:30px;
   display:flex;
+  height: 100%;
+  border: 2px dashed #777;
+  border-radius: 5px;
  
   .film-overall {
     width: 100%;
@@ -158,6 +170,9 @@ h1 {
 
 
 .news {
+  background: #fff;
+  border: 2px dashed #777;
+  border-radius: 5px;
   
   h1 {
     margin-top: 50px;
@@ -277,7 +292,18 @@ h1 {
     width: 300px;
     margin: 0 auto;
   }
+.cinema-wrapper {
+ // background-image: url('../img/dust_scratches.png');
+  height: 100%;
+  border: 2px dashed #777;
+  border-radius: 5px;
+}
 
+.book-choice-date {
+//  background-image: url('../img/dust_scratches.png');
+  border: 2px dashed rgb(185, 84, 199);
+  border-radius: 5px;
+}
 .book-choice-cinema-container {
   display: flex;
   justify-content: space-between;
@@ -286,6 +312,8 @@ h1 {
     height:170px;
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 5px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 15px rgba(0,0,0,0.22);
 
 
     &:first-child {
@@ -357,11 +385,14 @@ h1 {
 }
 
 #chack {
-  background-color: #f7fbf5;
-
+//  background-color: #f7fbf5;
+min-height: 420px;
+margin-top: 30px;
   img {
     margin: 0 auto;
   }
+
+ 
 }
 //--end book page-----------------
 
@@ -537,7 +568,7 @@ background-color: #777;
 //--hall-info--------------------------------
 
   #hall-info {
-    background-color: #fff;
+    //background-color: #fff;
     .seanse-info {
       margin-top: 20px;
     }

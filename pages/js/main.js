@@ -97,13 +97,18 @@ $('#signI').click(function(e) {
   
 
 });
-
+function check () {
+    if(window.location.pathname == '/book') {
+        window.location.pathname = '/'
+    }
+};
 $('#registration form').click(function(e){
  
     if(e.target == e.currentTarget){
         $("#fon").slideUp();
         $("#signIn").slideUp();
         $("#registration").slideUp();
+        check();
     }
  });
 
@@ -112,6 +117,9 @@ $('#registration form').click(function(e){
             $("#fon").slideUp();
             $("#signIn").slideUp();
             $("#registration").slideUp();
+            check();
+            
+            
         }
  
      
@@ -121,6 +129,7 @@ $('#registration form').click(function(e){
     $("#fon").slideUp();
     $("#signIn").slideUp();
     $("#registration").slideUp();
+    check();
 });
 
 
@@ -158,7 +167,7 @@ $("#registration form").submit(function(e){
             $("#reg").css({"display": "none"});
 
             $("#auth").css("display", "block");
-            $("#auth").html('Вы вошли, как ' + data.user);
+            $("#auth").html(data.user + ' '+ ' <a href="/logOut">LogOut</a>');
           }
           
           
@@ -190,6 +199,7 @@ $("#signIn form").submit(function(e){
             if (data.str != 'ok') {
                 warning.html(data);
             } else {
+                check();
                 $("#fon").slideUp();
                 console.log($("#reg").css("display"));
                 
@@ -198,7 +208,7 @@ $("#signIn form").submit(function(e){
                 $("#reg").css({"display": "none"});
     
                 $("#auth").css("display", "block");
-                $("#auth").html('Вы вошли, как ' + data.user);
+                $("#auth").html(data.user + ' ' +' <a href="/logOut">LogOut</a>');
             }
          
           
@@ -207,5 +217,7 @@ $("#signIn form").submit(function(e){
 
     
 });
+
+
 
 
