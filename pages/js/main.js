@@ -40,7 +40,7 @@ function insertDataHtml(data) {
     $(".film-poster h1").html(data.name);
     var img = document.querySelector(".film-poster img");
    
-    img.src = "http://localhost:8080/img/posters/" + data.name + ".jpg";
+    img.src = "/img/posters/" + data.name + ".jpg";
     $(".film-poster img").css("display","none").fadeIn(500);
 
     $(".film-year").html(data.year);
