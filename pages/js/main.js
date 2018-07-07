@@ -132,7 +132,36 @@ $('#registration form').click(function(e){
     check();
 });
 
-
+$('#autologin').click(function(e){
+    e.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: "/signIn",
+        contentType: 'application/json',
+        data: JSON.stringify({
+            name : 'test',
+            password: '1'
+        }),
+        success: function(data){
+            if (data.str != 'ok') {
+                warning.html(data);
+            } else {
+                check();
+                $("#fon").slideUp();
+                console.log($("#reg").css("display"));
+                
+                $("#signIn").slideUp();
+                
+                $("#reg").css({"display": "none"});
+    
+                $("#auth").css("display", "block");
+                $("#auth").html(data.user + ' ' +' <a href="/logOut">LogOut</a>');
+            }
+         
+          
+        }
+      });
+});
 
 $("#registration form").submit(function(e){
     e.preventDefault();

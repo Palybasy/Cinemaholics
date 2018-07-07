@@ -590,6 +590,10 @@ h1 {
           justify-content: center;
 }
 
+#autologin {
+  color: red;
+}
+
 @media (max-width: 575.98px) {
   #reg {
     margin: 0 auto;
